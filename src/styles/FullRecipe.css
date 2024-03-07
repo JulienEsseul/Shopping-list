@@ -1,0 +1,41 @@
+.btn-close-full-recipe {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  transform: translateX(-100%);
+  position: fixed;
+}
+
+.full-recipe {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.full-recipe-name {
+  align-self: center;
+}
+
+.full-recipe-recipe-title {
+  align-self: center;
+  margin-top: 2em;
+}
+
+.full-recipe-recipe {
+  margin-left: 2em;
+}
+
+.btn-delete-and-add-recipe {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-delete-recipe {
+  margin-left: 1em;
+  background-color: red;
+}
+
+.btn-add-recipe-shopping-list {
+  background-color: lightgreen;
+  margin-right: 1em;
+}

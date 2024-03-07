@@ -1,26 +1,44 @@
 import "../styles/RecipeItem.css";
+import { useState } from "react";
+import FullRecipe from "./FullRecipe";
 
-function fullRecipeOnClick({ name, picture, listIngredient, recipe }) {
+function RecipeItem({
+  name,
+  listIngredient,
+  recipe,
+  id,
+  addListIngredient,
+  setAddListIngredient,
+}) {
+  const [fullRecipe, setFullRecipe] = useState(false);
   return (
-    <div className="full-recipe">
-      <h1>{name}</h1>
-      <img src={picture} alt="Dish example" />
-      <ul>{listIngredient}</ul> {/* Need créer une vraie liste */}
-      <p>{recipe}</p>
+    //Items displayed en mini
+    <div>
+      <div onClick={() => setFullRecipe(true)}>
+        <img
+          src={`${process.env.PUBLIC_URL}/placeholder.png`}
+          alt="Dish example"
+        />
+        <span className="dish-name">{name}</span>
+      </div>
+
+      {/* Items displayed en fullpage*/}
+      <div>
+        {fullRecipe && (
+          <FullRecipe
+            fullRecipe={fullRecipe}
+            setFullRecipe={setFullRecipe}
+            name={name}
+            listIngredient={listIngredient}
+            recipe={recipe}
+            id={id}
+            addListIngredient={addListIngredient}
+            setAddListIngredient={setAddListIngredient}
+          />
+        )}
+      </div>
     </div>
   );
 }
 
-function RecipeItem({ name, picture, listIngredient, recipe }) {
-  return (
-    <div onClick={() => fullRecipeOnClick(name, picture, listIngredient, recipe)}>
-      <div onClick={() => console.log(name, picture, listIngredient, recipe)}>
-        <img src={picture} alt="Dish example" />
-        <li className="dish-name">{name}</li>
-      </div>
-    </div>
-  )
-}
-
 export default RecipeItem;
-// export default FullRecipeOnClick

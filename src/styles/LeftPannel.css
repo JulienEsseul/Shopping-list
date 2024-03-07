@@ -1,10 +1,11 @@
 .categories {
-  background-color: #117A65;
+  background-color: #117a65;
   height: 100vh;
   width: 10vw;
   padding-left: 1.5em;
 }
 
-.categories-type, .categories-taste {
+.categories-type,
+.categories-taste {
   padding-top: 1em;
 }

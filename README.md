@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+    [Béta] Shopping-list (non-definitive name)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A cooking recipe website with the goal of adding every needed ingredients for the recipes to a (soon to be) sorted shopping list on the side to help for grocery shopping.
 
-## Available Scripts
+Currently working in local only, still in development (see Future upgrades)
 
-In the project directory, you can run:
+N.B. : For now, when adding ingredients for the recipe, each of them must be separated by ", " (without ") or the website won't understand. Be careful too since its not handling case for now (Citron and citron will be considered 2 differents ingredients)
 
-### `npm start`
+    To make it work :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Run a terminal and type "npm start" (without ")
+- Run another terminal and type "json-server --watch src/data/recipeData.json" (without ")
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  Created using :
 
-### `npm test`
+- create-react-app
+- json-server (https://github.com/typicode/json-server/tree/v0)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Future upgrades :
 
-### `npm run build`
+Major upgrade :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Real server to be able to host images to display with the recipes rather than just a placeholder
+- A database of ingredients to select rather than adding yourself to prevent misstyping and not separating ingredients correctly when adding recipe (See N.B higher)
+- Global visual (CSS) : currently with minimal graphic effort to be usable, obviously not definitive.
+- Account creation and the whole thing that comes with it (authentification, profile managing...)
+- Smartphone compatibily, especially to help cross-utilisation and being able to use and check the shopping list directly in the app
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Minor upgrade :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 2 search bar : one for recipe name and one to filter for specific ingredients
+- Being able to modify your recipe and adding a version recorder for every user to see past and current version of the recipe
+- Being able to add notes and/or modifying another user's recipe for yourself only to keep track of your preferences without modifying it for everyone
+- Favorite system
+- Like counter
+- Being able to comment recipes
+- Actually sorting the shopping list by store shelf and being able to custom your store shelf order to adapt to your prefered store
+- More filters (vegan, vegetarian, gluten free, dietary...)
+- Quantity managing in the shopping list and being able to specify for how many person the recipe is planned to add the number of ingredient accordingly
+- Keeping track of the recipe you selected.
+- Being able to manually add other items to the shopping list which are not ingredients of one of the selected recipe (for example : soap, cutlery...) allowing it to be a global shopping list and not just for the specific recipe selected.
 
-### `npm run eject`
+Coding update :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Better filter handling (these if imbrication and multiple conditions ternary are terrifying)
+- Modifying the adding-recipe form to self-generate some of its fields.
