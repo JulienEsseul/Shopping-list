@@ -6,6 +6,11 @@ function ShoppingList({
   addListIngredient,
   setAddListIngredient,
 }) {
+  function handleSuppressItemShoppingList(index) {
+    setAddListIngredient(addListIngredient.filter((_, x) => x !== index));
+    sessionStorage.setItem("shopping-list", JSON.stringify(addListIngredient));
+  }
+
   return (
     <div id="shopping-list">
       {showShoppingList ? (
@@ -28,20 +33,26 @@ function ShoppingList({
               Copier dans le presse-papier
             </button>
             <ul className="list-shopping-list">
-              {addListIngredient.map((ingredient, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() =>
-                      setAddListIngredient(
-                        addListIngredient.filter((_, x) => x !== index),
-                      )
-                    }
-                  >
-                    X
-                  </button>
-                  {ingredient}
-                </li>
-              ))}
+              {sessionStorage.getItem("shopping-list") === null //Verifie s'il y a quelque chose dans le cache, s'il n'y a rien, ne renvoie rien
+                ? null
+                : JSON.parse(sessionStorage.getItem("shopping-list")).map(
+                    (ingredient, index) => (
+                      <li key={index} className="li-btn-and-ingredients">
+                        <button
+                          onClick={() => handleSuppressItemShoppingList(index)}
+                        >
+                          X
+                        </button>
+                        <ul className="ul-individual-ingredient">
+                          <li className="li-ingredient">
+                            {ingredient.ingredient}
+                          </li>
+                          <li className="li-weight">{ingredient.weight}</li>
+                          <li className="li-mesure">{ingredient.mesure}</li>
+                        </ul>
+                      </li>
+                    ),
+                  )}
             </ul>
           </div>
         </div>

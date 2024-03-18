@@ -2,136 +2,41 @@
   "display": [
     {
       "name": "Lasagnes",
-      "picture": "lasagne",
-      "id": "1",
       "listIngredient": [
-        "pates",
-        "sauce tomate",
-        "viande hachée"
+        {
+          "weight": "250",
+          "mesure": "g",
+          "ingredient": "Beurre"
+        },
+        {
+          "weight": "200",
+          "mesure": "mL",
+          "ingredient": "Lait"
+        },
+        {
+          "weight": "5",
+          "mesure": "Kg",
+          "ingredient": "Farine"
+        }
       ],
-      "recipe": "kjezfhjuzebjhzebfckjsbefhkzebfhjzefjbvzjhebfvjhzvehfgsjeghfvhsvfegs fh vzsegjfzhgevfjsvfejvzfjgsvjhbjh bzjh brjehz jrh zejhrfb ezhjbfezjhfvezjfhjezbejzhfb ezjh ejhb zejh ",
-      "categoryType": [
-        "Plat"
-      ],
-      "categoryTaste": [
-        "Salé"
-      ]
+      "recipe": "oui",
+      "categoryType": "Entrée",
+      "categoryTaste": "Salé",
+      "id": 1
     },
     {
-      "name": "Salade caesar",
-      "picture": "saladeCaesar",
-      "id": "2",
+      "name": "Beurre",
       "listIngredient": [
-        "salade",
-        "sauce caesar"
+        {
+          "weight": "500",
+          "mesure": "g",
+          "ingredient": "Beurre"
+        }
       ],
-      "recipe": "skjfnjhbsdfiubskjfdcnskjbdfsrkjnvcskhbfkjbsnkfhbcjhbsrfkvhsbefcjhsbrjhvbc sbrvjhsjhb khb skjbef kjsbfkhsbfkjzebkjbkjzbkj zekj ",
-      "categoryType": [
-        "Entrée"
-      ],
-      "categoryTaste": [
-        "Salé"
-      ]
-    },
-    {
-      "name": "Gateau au yahourt",
-      "picture": "gateauYahourt",
-      "id": "3",
-      "listIngredient": [
-        "farine",
-        "sucre",
-        "oeufs",
-        "levure",
-        "yaourt"
-      ],
-      "recipe": "zieufhziehriuzheriu zuoerh ozuhe ruozehr iuezhreizurh zoirjpaozie zgfjdsncvjhihvbcnoz ihefnuocijz,lfncizbef hbficn zheficbzifciu",
-      "categoryType": [
-        "Dessert"
-      ],
-      "categoryTaste": [
-        "Sucré"
-      ]
-    },
-    {
-      "name": "Financier aux amandes",
-      "picture": "financierAmandes",
-      "id": "4",
-      "listIngredient": [
-        "farine",
-        "sucre",
-        "oeufs",
-        "levure",
-        "amandes"
-      ],
-      "recipe": "Lorem ipsum",
-      "categoryType": [
-        "Friandise"
-      ],
-      "categoryTaste": [
-        "Sucré"
-      ]
-    },
-    {
-      "name": "Cacahuètes au cumin",
-      "picture": "cacahuetesCumin",
-      "id": "5",
-      "listIngredient": [
-        "cacahuètes",
-        "cumin",
-        "sel"
-      ],
-      "recipe": "Lorem ipsum",
-      "categoryType": [
-        "Friandise"
-      ],
-      "categoryTaste": [
-        "Salé"
-      ]
-    },
-    {
-      "name": "Porc au caramel",
-      "picture": "porcCaramel",
-      "id": "6",
-      "listIngredient": [
-        "porc",
-        "caramel"
-      ],
-      "recipe": "Lorem ipsum",
-      "categoryType": [
-        "Plat"
-      ],
-      "categoryTaste": [
-        "Sucré-salé"
-      ]
-    },
-    {
-      "name": "Salade de poulet aux pèches",
-      "picture": "saladePouletPeche",
-      "id": "7",
-      "listIngredient": [
-        "salade",
-        "poulet",
-        "pèche"
-      ],
-      "recipe": "Lorem ipsum",
-      "categoryType": [
-        "Entrée"
-      ],
-      "categoryTaste": [
-        "Sucré-salé"
-      ]
-    },
-    {
-      "name": "eds",
-      "listIngredient": [
-        "test",
-        "tast",
-        "tost"
-      ],
-      "recipe": "zefd",
-      "categoryType": "Plat",
-      "categoryTaste": "Sucré",
-      "id": "J9JMMjE"
+      "recipe": "ouiiub",
+      "categoryType": "Entrée",
+      "categoryTaste": "Salé",
+      "id": 3
     }
   ]
 }

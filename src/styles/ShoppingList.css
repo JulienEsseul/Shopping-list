@@ -3,7 +3,7 @@
   margin-right: 0px;
   margin-left: auto;
   max-width: 20%;
-  background-color: orange;
+  background-color: lightgrey;
 }
 
 .btn-hide-and-content-shopping-list {
@@ -35,4 +35,18 @@ li button {
 
 .list-shopping-list {
   padding: 1em;
+}
+
+.ul-individual-ingredient {
+  padding: 0;
+  gap: 0;
+}
+
+.li-btn-and-ingredients {
+  display: flex;
+  flex-direction: row;
+}
+
+.li-weight {
+  margin-left: 1em;
 }

@@ -36,7 +36,7 @@ Minor upgrade :
 - Being able to comment recipes
 - Actually sorting the shopping list by store shelf and being able to custom your store shelf order to adapt to your prefered store
 - More filters (vegan, vegetarian, gluten free, dietary...)
-- Quantity managing in the shopping list and being able to specify for how many person the recipe is planned to add the number of ingredient accordingly
+- Better quantity managing in the shopping list and being able to specify for how many person the recipe is planned to add the number of ingredient accordingly
 - Keeping track of the recipe you selected.
 - Being able to manually add other items to the shopping list which are not ingredients of one of the selected recipe (for example : soap, cutlery...) allowing it to be a global shopping list and not just for the specific recipe selected.
 
@@ -44,3 +44,5 @@ Coding update :
 
 - Better filter handling (these if imbrication and multiple conditions ternary are terrifying)
 - Modifying the adding-recipe form to self-generate some of its fields.
+- Commenting correctly and in english
+- Modifying variables/functions/components names to be more explicit

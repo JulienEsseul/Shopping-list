@@ -4,17 +4,24 @@ import "../styles/ButtonAddRecipe.css";
 
 function ButtonAddRecipe() {
   const [showForm, setShowForm] = useState(false);
+  const [moreIngredients, setMoreIngredients] = useState([
+    {
+      weight: "",
+      mesure: "",
+      ingredient: "",
+    },
+  ]);
 
   function sendForm(event) {
     const formResults = {
       name: event.target.form.newRecipeName.value,
-      listIngredient: event.target.form.newRecipeIngredients.value.split(", "),
+      listIngredient: moreIngredients,
       recipe: event.target.form.newRecipeRecipe.value,
       categoryType: event.target.form.newRecipeCategoryType.value,
       categoryTaste: event.target.form.newRecipeCategoryTaste.value,
     };
 
-    if (Object.values(formResults).some((x) => x == "")) {
+    if (Object.values(formResults).some((x) => x === "")) {
       alert("Merci de renseigner tous les champs");
     } else {
       fetch("http://localhost:3000/display", {
@@ -27,9 +34,27 @@ function ButtonAddRecipe() {
     }
   }
 
+  const handleFormChange = (index, event) => {
+    let data = [...moreIngredients];
+    data[index][event.target.name] = event.target.value;
+    setMoreIngredients(data);
+  };
+
+  const addFields = () => {
+    let newfield = { weight: "", mesure: "", ingredient: "" };
+    setMoreIngredients([...moreIngredients, newfield]);
+  };
+
+  const removeFields = (index) => {
+    let data = [...moreIngredients];
+    data.splice(index, 1);
+    setMoreIngredients(data);
+  };
+
   return (
     <div>
       <button
+        type="button"
         className="btn-show-form-add-new-recipe"
         id="buttonShowFormAddNewRecipe"
         onClick={() => setShowForm(true)}
@@ -64,14 +89,52 @@ function ButtonAddRecipe() {
             >
               Liste des ingredients :{" "}
             </label>
-            <input
-              type="text"
-              name="newRecipeIngredients"
-              id="newRecipeIngredients"
-              className="input-new-recipe-ingredients"
-              required
-            ></input>
+            {moreIngredients.map((input, index) => {
+              return (
+                <div key={index}>
+                  <button type="button" onClick={() => removeFields(index)}>
+                    -
+                  </button>
+
+                  <input
+                    type="number"
+                    name="weight"
+                    placeholder="Poids"
+                    value={input.weight}
+                    onChange={(event) => handleFormChange(index, event)}
+                  ></input>
+
+                  <select
+                    name="mesure"
+                    value={input.mesure}
+                    onChange={(event) => handleFormChange(index, event)}
+                  >
+                    <option></option>
+                    {""}
+                    {/*Solution temporaire, j'ai selectionné l'input dans value, la première valeur affichée (g) qui peut être celle que l'on souhaite n'est pas prise en compte car n'est pas une input de l'utilisateur. Il faut trouver une meilleur solution à long termes et à moyen termes, mettre un filet pour s'assurer que la réponse vide ne soit jamais selecttionnée. La plupart des solutions que je vois c'est d'utiliser un state pour les options, voir react.dev/reference/react-dom/components/select tout en bas de page */}
+                    <option value="g">g</option>
+                    <option value="Kg">Kg</option>
+                    <option value="mL">ml</option>
+                    <option value="L">L</option>
+                    <option value="CàC">CàC</option>
+                    <option value="CàS">CàS</option>
+                    <option value="pincée">pincée</option>
+                  </select>
+
+                  <input
+                    type="text"
+                    name="ingredient"
+                    placeholder="Ingredient"
+                    value={input.ingredient}
+                    onChange={(event) => handleFormChange(index, event)}
+                  ></input>
+                </div>
+              );
+            })}
           </div>
+          <button type="button" onClick={addFields}>
+            +
+          </button>
 
           <div className="new-recipe-category-type">
             <label
@@ -186,8 +249,6 @@ function ButtonAddRecipe() {
           >
             Valider
           </button>
-
-          <p>MANQUE A GERER L'IMAGE</p>
         </form>
       )}
     </div>
