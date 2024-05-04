@@ -15,19 +15,15 @@ function FullRecipe({
     window.location.reload();
   }
 
-  // function handleAddListIngredient() {
-  //   // A modifier
-  //   listIngredient.map((x) =>
-  //     addListIngredient.includes(x)
-  //       ? null
-  //       : setAddListIngredient((addListIngredient = [...addListIngredient, x])),
-  //   );
-  //   sessionStorage.setItem("shopping-list", JSON.stringify(addListIngredient));
-
-  //   setFullRecipe(false);
-  //}
-
   function handleAddListIngredient() {
+    if (addListIngredient.length === 0) {
+      setAddListIngredient(
+        (addListIngredient = JSON.parse(
+          sessionStorage.getItem("shopping-list"),
+        )),
+      );
+    }
+
     listIngredient.map((currentObjectListIngredient) => {
       let verif = addListIngredient.map((currentObjectAddListIngredient) => {
         if (
