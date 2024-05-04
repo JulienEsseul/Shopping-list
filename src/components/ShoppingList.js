@@ -28,7 +28,7 @@ function ShoppingList({
     });
 
     let code = [
-      "<style> body {display: flex; flex-direction: column} input:checked + label {text-decoration: line-through; color : grey;}</style>",
+      "<style> body {display: flex; flex-direction: column; } input:checked + label {text-decoration: line-through; color : grey;} div {display: flex; flex-direction: row; margin-bottom: 1%; font-size: 130%}{</style>",
     ];
     translatedList.map((x) => {
       code.push('<div><input type="checkbox" /><label>' + x + "</label></div>");
