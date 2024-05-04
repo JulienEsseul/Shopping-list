@@ -11,6 +11,15 @@ function ShoppingList({
     sessionStorage.setItem("shopping-list", JSON.stringify(addListIngredient));
   }
 
+  function saveInClipboard() {
+    let translatedList = [];
+    addListIngredient.map((x) => {
+      translatedList.push(x.ingredient + " " + x.weight + " " + x.mesure);
+      return translatedList;
+    });
+    navigator.clipboard.writeText(translatedList.join("\n")); // /!\ Ne fonctionne qu'en HTTPS et localhost
+  }
+
   return (
     <div id="shopping-list">
       {showShoppingList ? (
@@ -24,11 +33,7 @@ function ShoppingList({
           </button>
           <div className="content-shopping-list">
             <h3>Liste de course</h3>
-            <button
-              onClick={() =>
-                navigator.clipboard.writeText(addListIngredient.join("\n"))
-              } // /!\ Ne fonctionne qu'en HTTPS et localhost
-            >
+            <button onClick={() => saveInClipboard()}>
               {" "}
               Copier dans le presse-papier
             </button>
