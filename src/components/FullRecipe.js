@@ -16,7 +16,12 @@ function FullRecipe({
   }
 
   function handleAddListIngredient() {
-    if (addListIngredient.length === 0) {
+    if (
+      addListIngredient.length === 0 &&
+      Object.prototype.toString.call(
+        JSON.parse(sessionStorage.getItem("shopping-list")),
+      ) === "[object Array]"
+    ) {
       setAddListIngredient(
         (addListIngredient = JSON.parse(
           sessionStorage.getItem("shopping-list"),
