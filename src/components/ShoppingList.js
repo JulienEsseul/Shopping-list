@@ -20,6 +20,24 @@ function ShoppingList({
     navigator.clipboard.writeText(translatedList.join("\n")); // /!\ Ne fonctionne qu'en HTTPS et localhost
   }
 
+  function saveInClipboardHTML() {
+    let translatedList = [];
+    addListIngredient.map((x) => {
+      translatedList.push(x.ingredient + " " + x.weight + " " + x.mesure);
+      return translatedList;
+    });
+
+    let code = [
+      "<style> body {display: flex; flex-direction: column} input:checked + label {text-decoration: line-through; color : grey;}</style>",
+    ];
+    translatedList.map((x) => {
+      code.push('<div><input type="checkbox" /><label>' + x + "</label></div>");
+      return code;
+    });
+
+    navigator.clipboard.writeText(code.join("\n"));
+  }
+
   return (
     <div id="shopping-list">
       {showShoppingList ? (
@@ -36,6 +54,10 @@ function ShoppingList({
             <button onClick={() => saveInClipboard()}>
               {" "}
               Copier dans le presse-papier
+            </button>
+            <button onClick={() => saveInClipboardHTML()}>
+              {" "}
+              Copier dans le presse-papier en HTML
             </button>
             <ul className="list-shopping-list">
               {sessionStorage.getItem("shopping-list") === null //Verifie s'il y a quelque chose dans le cache, s'il n'y a rien, ne renvoie rien
